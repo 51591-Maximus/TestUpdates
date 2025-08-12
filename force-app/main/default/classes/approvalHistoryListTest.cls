@@ -2,6 +2,7 @@
 public class approvalHistoryListTest {
     @isTest
     static void testGetApprovalHistory_withData() {
+        // New test class
         // Create test user
         User u = new User(
             Alias = 'testu',
