@@ -1,0 +1,28 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,lightning:availableForFlowScreens" 
+                controller="approvalHistoryList" access="global" >
+    <aura:attribute name="approvalHistoryList" type="Object[]" />
+    <aura:attribute name="thisRecordId" type="String" access="global"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+        <thead>
+            <tr class="slds-text-heading_label">
+                <th scope="col">Created Date</th>
+                <th scope="col">Step Status</th>
+                <th scope="col">Assigned To</th>
+                <th scope="col">Actual Approver</th>
+                <th scope="col">Comments</th>
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.approvalHistoryList}" var="approvalHistory">
+                <tr>
+                    <td>{!approvalHistory.crDate}</td>
+                    <td>{!approvalHistory.status}</td>
+                    <td>{!approvalHistory.assignedTo}</td>
+                    <td>{!approvalHistory.actualApprover}</td>
+                    <td class="slds-cell-wrap">{!approvalHistory.comments}</td>
+                </tr>
+            </aura:iteration>
+        </tbody>
+    </table>
+</aura:component>
