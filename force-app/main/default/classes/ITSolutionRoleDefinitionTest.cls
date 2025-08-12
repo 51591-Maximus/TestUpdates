@@ -2,6 +2,7 @@
 public class ITSolutionRoleDefinitionTest {
     @isTest
     static void testInsertITSolutionRole() {
+        // Ensure a record exists for insert    
         // Insert required related records
         IT_Solution__c itSolution = new IT_Solution__c();
         insert itSolution;
